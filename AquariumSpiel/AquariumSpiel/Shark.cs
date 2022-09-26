@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 namespace AquariumSpiel
 {
-    public class Carp : Fishies
+    public class Shark : Fishies
     {
-        //Konstruktor
-        public Carp(int positiony, int positionx)
+        public Shark(int positiony, int positionx)
         {
-           
             PositionX = positionx;
             PositionY = positiony;
-            Shape = "><>";
-            ReverseShape = "<><";
-            ChangeDepthProb = 5;
-            Direction = "right";
+            Shape = "><===///>";
+            ReverseShape = "<///===><";
+            ChangeDepthProb = 2.5;
+            Direction = "left";
             Speed = 2;
         }
-
     }
 }
