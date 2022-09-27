@@ -17,7 +17,7 @@ namespace AquariumSpiel
             ReverseShape = "<///===><";
             ChangeDepthProb = 4;
             Direction = "right";
-            Speed = 2;
+            Speed = 3;
         }
     }
 }

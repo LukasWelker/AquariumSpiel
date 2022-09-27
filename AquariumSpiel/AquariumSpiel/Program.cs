@@ -17,9 +17,11 @@ namespace AquariumSpiel
             int UsersHeight = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Wähle wie breit dein Aquarium sein soll (es muss mindestens 50 lang sein)!");
             int UsersWidth = Convert.ToInt32(Console.ReadLine());
-
-
-            Aquarium aquarium1 = new Aquarium(UsersHeight, UsersWidth);
+            Console.WriteLine("Möchten Sie eine Strömung einbauen?(y/n)");
+            string UsersWish = Console.ReadLine();  
+            
+            
+            Aquarium aquarium1 = new Aquarium(UsersHeight, UsersWidth, UsersWish);
             aquarium1.AddFish();
             
             while (true)
@@ -27,7 +29,7 @@ namespace AquariumSpiel
                 Console.Clear();
                 aquarium1.LetFishesSwim();
                 aquarium1.PrintAquarium();
-                Thread.Sleep(500);
+                Thread.Sleep(400);
             }
            
 

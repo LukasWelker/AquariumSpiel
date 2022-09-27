@@ -14,15 +14,16 @@ namespace AquariumSpiel
         public List<Fishies> Fishes { get; set; }
         //[,] MultidimesionalesArray
         public string[,] AquariumBecken { get; set; }
+        public string UsersWish { get; set; }
 
-
-        public Aquarium(int height, int width)
+        public Aquarium(int height, int width, string userswish)
         {
             Fishes = new List<Fishies>();
 
             AquariumBecken = new string[height, width];
             Height = height;
             Width = width;
+            UsersWish = userswish;
         }
 
         public void AddFish()
@@ -31,6 +32,8 @@ namespace AquariumSpiel
             Fishes.Add(new Shark(14, 20));
             Fishes.Add(new Blowfish(6, 27));
             Fishes.Add(new Swordfish(4, 18));
+            Fishes.Add(new Carp(5, 22));
+            Fishes.Add(new Carp(4, 21));
         }
         public void PrintAquarium()
         {            
@@ -44,12 +47,11 @@ namespace AquariumSpiel
                     }
                     else
                     {
-                        AquariumBecken[j, i] = " ";
+                        AquariumBecken[j, i] = "~";
                     }
                     if (j == AquariumBecken.GetLength(0) - 1)
                     {
                         AquariumBecken[j, i] = "-";
-
                     }
                 }
             }
@@ -60,17 +62,18 @@ namespace AquariumSpiel
                     AquariumBecken[f.PositionY, f.PositionX + i] = f.Shape[i].ToString();
 
                 }
-
-                //else{
-                //    Console.Write($"{f.GetType().Name} ist zu weit");
-                //}
             }
 
             for (int j = 0; j < AquariumBecken.GetLength(0); j++)
             {
                 for (int i = 0; i < AquariumBecken.GetLength(1); i++)
                 {
+                    if (AquariumBecken[j, i] == "~")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
                     Console.Write(AquariumBecken[j, i]);
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
                 //\n bedeutet es wird eine neue Zeile angebrochen
                 Console.Write("\n");
@@ -81,7 +84,7 @@ namespace AquariumSpiel
             foreach (Fishies f in Fishes)
             {
                 //Hier übergebe ich der Methode ein Parameter
-                f.Swim(AquariumBecken);
+                f.Swim(AquariumBecken, UsersWish);
             }
         }
 
