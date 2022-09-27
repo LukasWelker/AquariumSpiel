@@ -13,8 +13,9 @@ namespace AquariumSpiel
             PositionX = positionx;
             PositionY = positiony;
             Shape = "><>-";
+            ShapeChange = "><>-";
             ReverseShape = "-<><";
-            ChangeDepthProb = 2;
+            ChangeDepthProb = 5;
             Direction = "right";
             Speed = 1;
         }

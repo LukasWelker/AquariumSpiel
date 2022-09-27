@@ -27,7 +27,7 @@ namespace AquariumSpiel
                 Console.Clear();
                 aquarium1.LetFishesSwim();
                 aquarium1.PrintAquarium();
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
             }
            
 
