@@ -52,6 +52,8 @@ namespace AquariumSpiel
             {
                 PositionX -= Speed;
             }
+
+            //Provisorische Strömung
             if(usersWish == "y")
             {
                 Random r = new Random();
@@ -94,7 +96,6 @@ namespace AquariumSpiel
             }
 
         }
-
-
+       
     }
 }

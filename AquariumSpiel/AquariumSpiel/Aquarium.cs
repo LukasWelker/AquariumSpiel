@@ -59,6 +59,7 @@ namespace AquariumSpiel
             {
                 for (int i = 0; i < f.Shape.Length; i++)
                 {
+                    //Bedeutet, dass mein Fisch von links nach rechts geprinted wird
                     AquariumBecken[f.PositionY, f.PositionX + i] = f.Shape[i].ToString();
 
                 }
@@ -87,7 +88,6 @@ namespace AquariumSpiel
                 f.Swim(AquariumBecken, UsersWish);
             }
         }
-
-
+        
     }
 }
